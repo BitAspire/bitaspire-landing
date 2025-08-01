@@ -22,7 +22,7 @@ export default function Home() {
           </Link>
         </div>
       </header>
-      <p className="text-center text-xs font-tracking-tight mt-24 text-zinc-200 dark:text-zinc-400">Site is WIP. See you soon!</p>
+      <p className="text-center text-xs font-tracking-tight mt-24 text-zinc-200 dark:text-zinc-400">Site is WIP. See you soon! &copy; 2025 BitAspire.com</p>
     </div>
   );
 }
