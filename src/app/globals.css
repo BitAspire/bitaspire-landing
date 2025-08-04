@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f9f8f7;
-  --foreground: #171717;
+  --background: #0c0c0c;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -12,7 +12,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/*@media (prefers-color-scheme: dark) {
   :root {
     --background: #0e0e0f;
     --foreground: #ededed;
@@ -21,7 +21,7 @@
   .striped {
     background: repeating-linear-gradient( -45deg, #505050 0.25px, #505050 1.66px, transparent 1px, transparent 5px ) !important;
   }
-}
+}*/
 
 body {
   background: var(--background);
@@ -30,5 +30,13 @@ body {
 }
 
 .striped {
-  background: repeating-linear-gradient( -45deg, #bbbbbb 0.25px, #bbbbbb 1.66px, transparent 1px, transparent 5px );
+    background-image: repeating-linear-gradient(
+        45deg,
+        #1a1a1a 0,
+        #1a1a1a 1px,
+        transparent 0,
+        transparent 50%
+    );
+    background-size: 7px 7px;
+    background-attachment: fixed;
 }

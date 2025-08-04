@@ -1,28 +1,35 @@
-import Image from "next/image";
+import Button from "@/components/Button";
+import Navbar from "@/components/navbar/Navbar";
+import { ArrowUpRight, ShoppingBag } from "lucide-react";
 import Link from "next/link";
-
-import { ArrowUpRight, LifeBuoy } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="p-4">
-      <div className="w-[40vw] h-[40vw] lg:w-[20vw] lg:h-[20vw] bg-blue-700 rounded-full absolute -top-24 md:-top-72 lg:-top-48 left-[30%] lg:left-[40%] blur-[90px] lg:blur-[250px] z-[-1]"></div>
-      <header className="pt-36 lg:pt-48 max-w-[900px] w-full mx-auto flex flex-col items-center justify-center gap-8">
-        <Image src="/logo.png" alt="Logo" width={128} height={128} quality={100} />
-        <h1 className="text-5xl lg:text-7xl font-bold -tracking-[0.06em] text-zinc-800 dark:text-white">We are BitAspire</h1>
-        <p className="text-lg lg:text-xl text-zinc-600 dark:text-zinc-400 max-w-md -tracking-[0.06em] text-center">We make high quality Minecraft plugins so you can enjoy your game even more.</p>
-        <div className="w-full flex flex-col md:flex-row gap-4 items-center">
-          <Link href="https://wiki.bitaspire.com" className="rounded-md flex flex-col gap-2 items-start border border-zinc-200 dark:border-zinc-800 w-full p-6 text-sm tracking-tight font-medium uppercase text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900 hover:text-zinc-800 dark:hover:text-white transition-colors">
-            <LifeBuoy size={24} />
-            Read our documentation
-          </Link>
-          <Link href="https://discord.gg/DC4Gqj3y5V" className="rounded-md flex flex-col gap-2 items-end border border-zinc-200 dark:border-zinc-800 w-full p-6 text-sm tracking-tight font-medium uppercase text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900 hover:text-zinc-800 dark:hover:text-white transition-colors">
-            <ArrowUpRight size={24} />
-            Join our Discord
-          </Link>
+    <div>
+      <div className='z-[-1] absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#111111_1px,transparent_1px),linear-gradient(to_bottom,#111111_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
+      <Navbar />
+      <header className="max-w-[420px] sm:max-w-[600px] lg:max-w-[900px] xl:max-w-[1200px] mx-auto px-4 py-12 border-x border-zinc-800/75">
+        <div className="flex flex-col xl:flex-row items-center xl:items-end justify-center pt-36 md:w-2/3 xl:w-full gap-4 text-center xl:text-start mx-auto">
+          <h1 className="text-5xl lg:text-7xl xl:text-9xl font-bold text-zinc-50 -tracking-[0.06em] w-full">Welcome to BitAspire</h1>
+          <p className="text-zinc-400 tracking-tight md:max-w-lg xl:w-1/2 xl:text-justify mb-2 mt-6">We make high quality Minecraft plugins for your server to enhance gameplay and user experience. For developers, we made a marketplace to share and sell your creativity.</p>
+        </div>
+        <div className="flex flex-col md:flex-row items-center justify-start gap-4 mt-8">
+          <Button href="/marketplace" variant="primary" className="w-full md:w-auto">
+            Explore Marketplace <ShoppingBag size={16} />
+          </Button>
+          <Button target="_blank" href="/documentation" variant="secondary" className="w-full md:w-auto">
+            Join our Discord <ArrowUpRight size={16} />
+          </Button>
         </div>
       </header>
-      <p className="text-center text-xs font-tracking-tight mt-24 text-zinc-200 dark:text-zinc-400">Site is WIP. See you soon! &copy; 2025 BitAspire.com</p>
+      {/*<main className="max-w-[420px] sm:max-w-[600px] lg:max-w-[900px] xl:max-w-[1200px] mx-auto px-4 py-8">
+        {/* Main content goes here
+      </main>*/}
+      <div className="striped w-full h-10 border-y border-zinc-800/75"></div>
+      <footer className="max-w-[420px] sm:max-w-[600px] lg:max-w-[900px] xl:max-w-[1200px] mx-auto px-4 py-8 border-x border-zinc-800/75 text-center text-zinc-400">
+        <p>&copy; {new Date().getFullYear()} BitAspire. All rights reserved.</p>
+        <p className="mt-2">Follow us on <a href="/discord" className="text-blue-500 hover:underline">Discord</a> for support and updates.</p>
+      </footer>
     </div>
   );
 }
